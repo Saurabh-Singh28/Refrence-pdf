@@ -1,0 +1,200 @@
+ 
+    :root {
+      --bg-color: #121212;
+      --text-color: #ffffff;
+      --table-hover: #1f1f1f;
+      --button-bg: #ff00ff;
+      --button-hover: #00ffff;
+      --navbar-bg: #222;
+      --accent-color: #ffcc00;
+    }
+
+    body.light {
+      --bg-color: #f4f4f4;
+      --text-color: #000;
+      --table-hover: #eee;
+      --button-bg: #007bff;
+      --button-hover: #0056b3;
+      --navbar-bg: #ddd;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://www.transparenttextures.com/patterns/stardust.png'), linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      background-attachment: fixed;
+      color: var(--text-color);
+    }
+
+    header {
+      position: relative;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 4px #000;
+      font-size: 36px;
+      font-weight: bold;
+      background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+      z-index: 1;
+    }
+
+    header > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--navbar-bg);
+      padding: 10px 40px;
+      flex-wrap: wrap;
+    }
+
+    .navbar-section {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .navbar a, .theme-toggle {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .theme-toggle {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      background: var(--button-bg);
+      color: white;
+    }
+
+    .dp {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid white;
+      cursor: pointer;
+    }
+
+    .popup {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: var(--navbar-bg);
+      border: 1px solid #444;
+      border-radius: 10px;
+      padding: 15px;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    }
+
+    .popup a {
+      display: block;
+      color: var(--text-color);
+      text-decoration: none;
+      margin: 10px 0;
+    }
+
+    .popup a:hover {
+      text-decoration: underline;
+    }
+
+    table {
+      width: 80%;
+      margin: 40px auto;
+      border-collapse: collapse;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    table th, table td {
+      padding: 15px;
+      border-bottom: 1px solid #444;
+    }
+
+    table tr:hover {
+      background-color: var(--table-hover);
+    }
+
+    .open-button {
+      background-color: var(--button-bg);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      text-shadow: 0 0 5px #fff, 0 0 10px #0ff, 0 0 15px #0ff;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .open-button:hover {
+      background-color: var(--button-hover);
+      transform: scale(1.05);
+    }
+
+    input[type="text"] {
+      padding: 6px 10px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+    }
+
+    .intro {
+      text-align: center;
+      margin:   40px 0;
+      text-decoration: dotted;
+      font-size: 18px;
+      font-weight: bold;
+      color: rgb(252, 76, 12);
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 20px;
+      background-color: var(--navbar-bg);
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-color);
+    }
+
+    .swastik {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      opacity: 0.2;
+      z-index: 0;
+      background: linear-gradient(135deg, gold, orange);
+      padding: 15px;
+      border-radius: 50%;
+      box-shadow: 0 0 20px gold;
+    }
+
+    .swastik.left {
+      left: 10px;
+    }
+
+    .swastik.right {
+      right: 10px;
+    }
+
+    .quote {
+      margin-top: 10px;
+      font-style: italic;
+      color: var(--accent-color);
+    }

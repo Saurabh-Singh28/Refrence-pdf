@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>File Library</title>
+<link rel="stylesheet" href="rfrnc.css">
+</head>
+<body>
+  <header>
+    Welcome to the File Library 📚
+  </header>
+
+  <div class="swastik left">卐</div>
+  <div class="swastik right">卐</div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="navbar-section">
+      <a href="#">About Me</a>
+      <a href="https://saurabh-singh28.github.io/-Team-SRD-report/">Report Page</a>
+      <a href="#">Other Works</a>
+    </div>
+    <div class="navbar-section">
+      <input type="text" id="searchInput" placeholder="Search by title...">
+    </div>
+    <div class="navbar-section">
+      <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+      <img src="photo_6134436157937794880_c.jpg" class="dp" id="dp">
+    </div>
+  </div>
+
+  <!-- DP Popup -->
+  <div class="popup" id="popupMenu">
+    <a href="#">Home</a>
+    <a href="#">Files</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    <pre>"हम सनातनी हैं — हमारी जड़ें वेदों में हैं, और हमारी दृष्टि भविष्य में। हम न तो केवल दर्शक हैं, न ही मौन साधक —
+       हम डिजिटल धर्मयुद्ध के योद्धा हैं। हर ट्वीट हमारा तीर है, हर रिपोर्ट हमारा कवच। हम संगठित हैं, सजग हैं,
+        और संकल्पित हैं — धर्म की रक्षा के लिए, संस्कृति की चेतना के लिए, और सत्य की विजय के लिए। हमारा मार्ग सनातन है,
+        और हमारी गति अजेय। क्योंकि हम हैं — धर्म में एकजुट, और उद्देश्य में अडिग।"</pre>
+  </div>
+
+  <!-- Files Table -->
+  <table id="fileTable">
+    <tr>
+      <th>Title (Description)</th>
+      <th></th>
+    </tr>
+   <tr>
+  <td>Why Gandhi is not Father of the Nation (<i>PDF Article in Hindi</i>)</td>
+  <td><button class="open-button" onclick="openFile('files/gandhi-not-father.pdf')">Open File</button><a href="files/gandhi-not-father.pdf" download>
+      <button class="open-button">Download</button>
+    </a></td>
+</tr>
+
+    <tr>  
+      <td>File 2 (<i>Description of file 2</i>)</td>
+      <td><button class="open-button" onclick="openFile('files/file2.pdf')">Open File</button></td>
+    </tr>
+    <tr>
+      <td>File 3 (<i>Description of file 3</i>)</td>
+      <td><button class="open-button" onclick="openFile('files/file3.pdf')">Open File</button></td>
+    </tr>
+  </table>
+
+  <!-- Footer -->
+  <footer>
+     <pre>Created by Saurabh Singh & Team SRD •
+Contact: <a href="mailto:sanataniking280@gmail.com">Email</a> | <a href="https://t.me/Mr_Wizard_1">Telegram</a></pre>
+    <div class="quote" id="quote"></div>
+  </footer>
+
+ <link rel="javascript" href="rfrnc.js"> 
+</body>
+</html>
