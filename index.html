@@ -23,6 +23,12 @@
       <img src="photo_6134436157937794880_c.jpg" class="dp" id="dp">
     </div>
   </div>
+  
+<div class="popup" id="popupMenu">
+  <a href="#">Home</a>
+  <a href="#">Files</a>
+  <a href="#">Contact</a>
+</div>
 
   <div class="intro">
 "हम सनातनी हैं — हमारी जड़ें वेदों में हैं, और हमारी दृष्टि भविष्य में। हम न तो केवल दर्शक हैं, न ही मौन साधक —
@@ -105,6 +111,19 @@
       "Because Every File Has a Story",
     ];
     document.getElementById("quote").innerText = quotes[Math.floor(Math.random() * quotes.length)];
+
+    const dp = document.getElementById("dp");
+const popup = document.getElementById("popupMenu");
+dp.addEventListener("click", (e) => {
+  e.stopPropagation();
+  popup.style.display = popup.style.display === "block" ? "none" : "block";
+});
+document.addEventListener("click", (e) => {
+  if (!popup.contains(e.target) && e.target !== dp) {
+    popup.style.display = "none";
+  }
+});
+
   </script>
 </body>
 </html>
