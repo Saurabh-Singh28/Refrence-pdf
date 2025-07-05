@@ -51,6 +51,15 @@
     <div class="quote" id="quote"></div>
   </footer>
 
+<section class="contact-section" id="contact">
+  <form action="https://formspree.io/f/meoknvdq" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
   <script>
     const fileList = [
       {
@@ -58,16 +67,16 @@
         file: "gandhi-not-father.pdf",
         description: "PDF Article in Hindi"
       },
-//   {
-       // name: "History Report",
-    //    file: "history-report.pdf",
-    //    description: "A document on colonial India"
-     // },
-//{
-      // name: "Freedom Notes",
-        //file: "freedom-notes.pdf",
-        //description: "Student notes on the independence movement"
-    //  }
+      // {
+      //   name: "History Report",
+      //   file: "history-report.pdf",
+      //   description: "A document on colonial India"
+      // },
+      // {
+      //   name: "Freedom Notes",
+      //   file: "freedom-notes.pdf",
+      //   description: "Student notes on the independence movement"
+      // }
     ];
 
     const table = document.getElementById("fileTable");
