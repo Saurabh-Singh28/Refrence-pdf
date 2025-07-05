@@ -38,12 +38,24 @@
   </div>
 
   <!-- FILE SECTION (Auto-generated via JavaScript) -->
+   <div id="scroll-wrapper">
   <table id="fileTable">
+  <thead>
     <tr>
       <th>File Title</th>
       <th>Actions</th>
     </tr>
-  </table>
+  </thead>
+  <tbody></tbody> <!-- ✅ THIS MUST BE PRESENT -->
+</table>
+
+
+</div>
+<div id="pagination-controls">
+  <button onclick="prevPage()">Prev</button>
+  <span id="page-info"></span>
+  <button onclick="nextPage()">Next</button>
+</div>
 
   <footer>
     Created by Saurabh Singh & Team SRD •
@@ -59,6 +71,8 @@
     <button type="submit">Send Message</button>
   </form>
 </section>
+
+ 
 
   <script>
     const fileList = [
@@ -76,6 +90,45 @@
       //   name: "Freedom Notes",
       //   file: "freedom-notes.pdf",
       //   description: "Student notes on the independence movement"
+      // },{
+      //   name: "History Report",
+      //   file: "history-report.pdf",
+      //   description: "A document on colonial India"
+      // },
+      // {
+      //   name: "Freedom Notes",
+      //   file: "freedom-notes.pdf",
+      //   description: "Student notes on the independence movement"
+      // },
+      // {
+      //   name: "History Report",
+      //   file: "history-report.pdf",
+      //   description: "A document on colonial India"
+      // },
+      // {
+      //   name: "Freedom Notes",
+      //   file: "freedom-notes.pdf",
+      //   description: "Student notes on the independence movement"
+      // },
+      // {
+      //   name: "History Report",
+      //   file: "history-report.pdf",
+      //   description: "A document on colonial India"
+      // },
+      // {
+      //   name: "Freedom Notes",
+      //   file: "freedom-notes.pdf",
+      //   description: "Student notes on the independence movement"
+      // },
+      // {
+      //   name: "History Report",
+      //   file: "history-report.pdf",
+      //   description: "A document on colonial India"
+      // },
+      // {
+      //   name: "Freedom Notes",
+      //   file: "freedom-notes.pdf",
+      //   description: "Student notes on the independence movement"
       // }
     ];
 
@@ -83,6 +136,8 @@
 
     fileList.forEach(item => {
       const row = document.createElement("tr");
+      row.classList.add('item');  // Important for pagination
+
       row.innerHTML = `
         <td>${item.name} <br><i>${item.description}</i></td>
         <td>
@@ -92,8 +147,11 @@
           </a>
         </td>
       `;
-      table.appendChild(row);
-    });
+      document.querySelector('#fileTable tbody').appendChild(row);
+});
+// 👈 Add this after all rows are created
+setupPagination();  
+
 
     // Search
     document.getElementById('searchInput').addEventListener('input', function () {
@@ -132,6 +190,43 @@ document.addEventListener("click", (e) => {
     popup.style.display = "none";
   }
 });
+
+let currentPage = 1;
+const itemsPerPage = 2;
+console.log("Rows added:", document.querySelectorAll('#fileTable .item').length);
+
+function setupPagination() {
+  showPage(1);
+}
+
+function showPage(page) {
+  const items = document.querySelectorAll('#fileTable .item');
+  const totalPages = Math.ceil(items.length / itemsPerPage);
+
+  if (page < 1) page = 1;
+  if (page > totalPages) page = totalPages;
+
+  items.forEach((row, index) => {
+    row.style.display = (index >= (page - 1) * itemsPerPage && index < page * itemsPerPage)
+      ? ''
+      : 'none';
+  });
+
+  const pageInfo = document.getElementById('page-info');
+  if (pageInfo) {
+    pageInfo.textContent = `Page ${page} of ${totalPages}`;
+  }
+
+  currentPage = page;
+}
+
+function nextPage() {
+  showPage(currentPage + 1);
+}
+
+function prevPage() {
+  showPage(currentPage - 1);
+}
 
   </script>
 </body>
