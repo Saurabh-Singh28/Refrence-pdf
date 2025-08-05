@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Cell - Dharm Yuva Sangathan</title>
+    <meta name="description" content="IT Cell of Dharm Yuva Sangathan - Digital platform for reporting and tech initiatives">
+    <meta name="keywords" content="IT Cell, Dharm Yuva Sangathan, digital reporting, tech initiatives">
+    <meta name="author" content="Dharm Yuva Sangathan">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="IT Cell - Dharm Yuva Sangathan">
+    <meta property="og:description" content="Digital platform for reporting and tech initiatives">
+    <meta property="og:type" content="website">
+    
+    <!-- CSS and Fonts -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iOCIgZmlsbD0iI2ZmNmIzNSIvPgo8cGF0aCBkPSJNOCAxMkgxNlYyMEg4VjEyWiIgZmlsbD0id2hpdGUiLz4KPHA+dGggZD0iTTIwIDhIMjhWMTZIMjBWOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yMCAyMEgyOFYyOEgyMFYyMFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=">
+
+    <style>
+        .it-hero {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .it-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .it-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .it-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .it-hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+        
+        .report-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .report-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        
+        .report-card {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border: 3px solid #ff6b35;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .report-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #ff6b35, #f7931e);
+        }
+        
+        .report-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            box-shadow: 0 10px 30px rgba(255,107,53,0.3);
+        }
+        
+        .report-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .report-card h2 {
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .report-card p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        .report-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255,107,53,0.3);
+        }
+        
+        .report-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255,107,53,0.4);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .report-button i {
+            font-size: 1.3rem;
+        }
+        
+        .features-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .feature-item:hover {
+            border-color: #ff6b35;
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: #ff6b35;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .feature-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .feature-item h3 {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .feature-item p {
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .back-to-home {
+            position: fixed;
+            top: 90px;
+            left: 20px;
+            z-index: 1000;
+            background: rgba(255,107,53,0.9);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .back-to-home:hover {
+            background: rgba(255,107,53,1);
+            transform: translateY(-2px);
+            color: white;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .it-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .it-hero .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .report-card {
+                padding: 40px 30px;
+            }
+            
+            .back-to-home {
+                position: static;
+                display: inline-block;
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to Home Button -->
+    <a href="index.html" class="back-to-home">
+        <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h1 class="logo">Dharm Yuva Sangathan</h1>
+                    <p class="tagline">IT Cell | धर्मो रक्षति रक्षित:</p>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="it-hero">
+        <div class="it-hero-content">
+            <h1>IT Cell</h1>
+            <p class="subtitle">Digital Platform for Tech Initiatives & Reporting</p>
+        </div>
+    </section>
+
+    <!-- Report Section -->
+    <section class="report-section">
+        <div class="report-container">
+            <div class="report-card">
+                <div class="report-icon">
+                    <i class="fas fa-paper-plane"></i>
+                </div>
+                <h2>Send Report</h2>
+                <p>Submit your reports, suggestions, or technical issues directly to our IT Cell team. We're here to support our digital initiatives and ensure smooth operations.</p>
+                <a href="mailto:itcell@dharmyuvasangathan.org?subject=Report%20Submission&body=Hello%20IT%20Cell%20Team,%0A%0APlease%20find%20my%20report%20below:%0A%0A[Your%20message%20here]%0A%0ABest%20regards" class="report-button">
+                    <i class="fas fa-envelope"></i>
+                    Send Report Mail
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Our Digital Initiatives</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Digital Security</h3>
+                    <p>Protecting our digital assets and ensuring secure communication channels for all organizational activities.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Web Presence</h3>
+                    <p>Maintaining and developing our online platforms to effectively reach and engage with our community.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Solutions</h3>
+                    <p>Creating user-friendly mobile applications to enhance accessibility and engagement for our members.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Data Analytics</h3>
+                    <p>Leveraging data insights to improve our programs and better understand community needs and engagement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>IT Cell - Dharm Yuva Sangathan</h3>
+                    <p>Empowering our mission through technology and digital innovation for a dharmic future.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#activities">Our Activities</a></li>
+                        <li><a href="index.html#events">Events</a></li>
+                        <li><a href="index.html#join">Join Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>IT Services</h4>
+                    <ul>
+                        <li><a href="mailto:itcell@dharmyuvasangathan.org">Technical Support</a></li>
+                        <li><a href="mailto:itcell@dharmyuvasangathan.org">Report Issues</a></li>
+                        <li><a href="mailto:itcell@dharmyuvasangathan.org">Suggestions</a></li>
+                        <li><a href="mailto:itcell@dharmyuvasangathan.org">Partnerships</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact IT Cell</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> itcell@dharmyuvasangathan.org</li>
+                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-map-marker-alt"></i> New Delhi, India</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dharm Yuva Sangathan - IT Cell. All rights reserved. | Designed with ❤️ for Dharma</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
